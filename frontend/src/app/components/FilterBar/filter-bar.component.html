@@ -1,8 +1,26 @@
 <div class="filter-bar">
-  <div>
-    <span>Brand</span>
-    <nb-select placeholder="Filter by Brand" [(selected)]="selectedBrand">
-      <nb-option *ngFor="let brand of brandProvider.records" [value]="brandProvider.getValue(brand)">{{brandProvider.getTitle(brand)}}</nb-option>
-    </nb-select>
+  <div id="filter">
+    <div id="brand-fiter" class="form">
+      <span>Brand</span>
+      <nb-select placeholder="Filter by Brand" [(selected)]="selectedBrand">
+        <nb-option *ngFor="let brand of brandProvider.records" [value]="brandProvider.getValue(brand)">{{brandProvider.getTitle(brand)}}</nb-option>
+      </nb-select>
+    </div>
+    <div id="category-fiter" class="form">
+      <span>Category</span>
+      <nb-select placeholder="Filter by Category" [(selected)]="selectedCategory">
+        <nb-option *ngFor="let category of categoryProvider.records" [value]="categoryProvider.getValue(category)">{{categoryProvider.getTitle(category)}}</nb-option>
+      </nb-select>
+    </div>
   </div>
+  <div id="sort" class="form">
+    <span>Sort By</span>
+    <nb-select placeholder="Sort by" [(selected)]="selectedSortBy">
+      <nb-option *ngFor="let sort of sortProvider.records" [value]="sortProvider.getValue(sort)">{{sortProvider.getTitle(sort)}}</nb-option>
+    </nb-select>
+    <button nbButton ghost status="info" (click)="onSortClick()">
+      <nb-icon [icon]="sortAsc ? 'arrow-downward-outline' : 'arrow-upward-outline'"></nb-icon>
+    </button>
+  </div>
+  <button nbButton outline status="primary" (click)="onSubmit()">Submit</button>
 </div>
