@@ -1,18 +1,29 @@
-import * as mongoose from 'mongoose';
+import { Model } from "@tsed/mongoose"
+import { Property, Required } from "@tsed/schema"
 
-const ProductSchema = new mongoose.Schema(
-    {
-        gtin: { type: Number, required: true },
-        name: { type: String, required: true },
-        image: { type: String },
-        brand: { type: String, required: true },
-        category: { type: String, required: true },
-        color: { type: String, required: true },
-        stock: { type: Number, required: true },
-        price: { type: Number, required: true }
-    },
-    { timestamps: true }
-);
+@Model()
+export class Product {
+  @Required()
+  gtin: number
 
+  @Required()
+  name: string
 
-export default mongoose.model('products', ProductSchema);
+  @Property()
+  image: string
+
+  @Required()
+  brandName: string
+
+  @Required()
+  category: string
+
+  @Required()
+  color: string
+
+  @Required()
+  stock: number
+
+  @Required()
+  price: number
+}

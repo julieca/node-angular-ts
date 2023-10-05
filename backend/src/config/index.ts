@@ -1,4 +1,4 @@
-import { join, resolve } from 'path'
+import { resolve } from 'path'
 // import * as Services from './services'
 import { ProductController } from '../controllers/product'
 import { envs } from './env'
@@ -23,12 +23,12 @@ export const config: Partial<TsED.Configuration> = {
   mongoose: [
     {
       id: envs.FASHION_CLOUD_DB,
-      url: envs.MONGO_URL,
+      url: `${envs.MONGO_URL}/${envs.FASHION_CLOUD_DB}`,
       connectionOptions: {}
     }
   ],
   acceptMimes: ['application/json', 'text/javascript', 'application/x-www-form-urlencoded', 'text/html'],
   routers: { mergeParams: false, strict: false, caseSensitive: false },
   converter: { additionalProperties: 'ignore' },
-  swagger: [{path: '/',specVersion: '3.0.1'}]
+  swagger: [{ path: '/', specVersion: '3.0.1' }]
 }

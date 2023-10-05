@@ -1,7 +1,7 @@
 // import dotenv from "dotenv"
-const SERVICE_PORT: number = parseInt(process.env.SERVICE_PORT) || 8000;
-const MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost:27017/';
-const FASHION_CLOUD_DB = process.env.FASHION_CLOUD_DB || 'fashioncloud-assignment';
+const SERVICE_PORT: number = parseInt(process.env.SERVICE_PORT) || 8000
+const MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost:27017'
+const FASHION_CLOUD_DB = process.env.FASHION_CLOUD_DB || 'fashioncloud-assignment'
 
 export const envs = {
   ...process.env,
@@ -9,5 +9,5 @@ export const envs = {
   SERVICE_PORT,
   MONGO_URL,
   FASHION_CLOUD_DB
-};
-export const isProduction = process.env.NODE_ENV === "production";
+}
+export const isProduction = process.env.NODE_ENV === "production"

@@ -1,16 +1,16 @@
 import { Controller } from '@tsed/di'
-import { MongooseService } from '@tsed/mongoose'
+
 import { Get } from '@tsed/schema'
+import { ProductsService } from '../services/product'
 // import { envs } from 'src/config/env'
 
 @Controller('/')
 export class ProductController {
   // private db
-  constructor(mongooseService: MongooseService) {
-    // this.db = mongooseService.get(envs.FASHION_CLOUD_DB)
-  }
+  constructor(public productsService: ProductsService) {}
 
   @Get('/list') async list() {
-    return { status: 200 }
+    const products = await this.productsService.query({brandName: "Aurora"})
+    return { status: 200, data: products }
   }
 }
