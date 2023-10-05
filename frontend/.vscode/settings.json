@@ -1,0 +1,54 @@
+{
+  "npm.packageManager": "yarn",
+  "eslint.packageManager": "yarn",
+  "eslint.options": {
+    "extensions": [".ts", ".html"]
+  },
+  "eslint.lintTask.options": "--ext .ts,.html",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html"
+  ],
+  "tslint.autoFixOnSave": true,
+  "editor.rulers": [160],
+  "html.format.wrapLineLength": 160,
+  "html.format.extraLiners": "",
+  "html.format.indentInnerHtml": true,
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "dist": true,
+    "node_modules": true,
+    "projects/admin/src/assets/pdf.worker.js": true,
+    "cypress/integration/examples": true,
+    ".angular": true,
+    "out-tsc": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "typescript.preferences.quoteStyle": "single",
+  "json.format.enable": false,
+  "html.format.enable": false,
+  "typescript.format.semicolons": "remove",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.formatOnPaste": true,
+}

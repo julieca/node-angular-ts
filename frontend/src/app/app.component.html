@@ -1,6 +1,21 @@
-<nav class="platform-navigation">
-    <a routerLink="/" class="platform-navigation-logo">
-        <img src="/assets/fc_logo_white.svg" alt="Fashion Cloud Logo" />
-    </a>
-</nav>
-<router-outlet></router-outlet>
+<nb-layout>
+
+  <nb-layout-header fixed>
+  <!-- Insert header here -->
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <nav class="platform-navigation">
+        <a routerLink="/" class="platform-navigation-logo">
+            <img src="/assets/fc_logo_white.svg" alt="Fashion Cloud Logo" />
+        </a>
+    </nav>
+    <router-outlet></router-outlet>
+    
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>
