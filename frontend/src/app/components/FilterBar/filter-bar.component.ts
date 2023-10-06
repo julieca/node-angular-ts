@@ -9,7 +9,7 @@ export class FilterBarComponent {
     { title: 'Shirt', value: 'shirt' },
     { title: 'Tshirt', value: 't-shirt' },
     { title: 'Jacket', value: 'jacket' },
-    { title: 'Pants', value: 'pants' },
+    { title: 'Pants', value: 'pant' },
   ])
   public brandProvider = new NameValueProvider<string>([
     { title: 'Aurora', value: 'aurora' },

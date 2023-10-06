@@ -1,7 +1,7 @@
 <div class="container">
-  <div id="list">
+  <div *ngIf="data.total > 0; else notfound" id="list">
     <nb-card *ngFor="let product of data.records" accent="primary" [id]="'card-' + product.gtin">
-      <nb-card-header>
+      <nb-card-header class="image-container">
         <img [src]="imageSrc(product.image, product.category)" width="50" />
       </nb-card-header>
       <nb-card-body>
@@ -11,5 +11,6 @@
       </nb-card-body>
     </nb-card>
   </div>
+  <ng-template #notfound>Sorry, we don't have the product you're looking for.</ng-template>
   <button *ngIf="data.limit===data.total" nbButton outline status="primary" (click)="onLoadMore()">load more</button>
 </div>

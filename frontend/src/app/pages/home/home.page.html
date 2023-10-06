@@ -1,4 +1,4 @@
 <div class="container">
   <app-filter-bar (submitFilter)="onFilterChange($event)"></app-filter-bar>
-  <app-card-list *ngIf="data" [data]="data"></app-card-list>
+  <app-card-list *ngIf="data" [data]="data" (loadMore)="onLoadMore()"></app-card-list>
 </div>
