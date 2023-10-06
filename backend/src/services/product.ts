@@ -36,20 +36,17 @@ export class ProductsService {
    * @returns {Promise<TResult|TResult2|Product>}
    */
   async save(Product: Product): Promise<Product> {
-
     const model = new this.Product(Product)
     await model.updateOne(Product, { upsert: true })
     return model
   }
-
 
   /**
    *
    * @param id
    * @returns {Promise<Product>}
    */
-  async remove(id: string): Promise<Product> {
-    const product = await this.Product.findById(id).exec()
-    return product
+  async remove(id: string): Promise<void> {
+    await this.Product.findById(id).remove().exec()
   }
 }
