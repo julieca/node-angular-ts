@@ -1,5 +1,12 @@
 # Frontend
 
+something that I still I havent cover in this project:
+1. pages usually separate per parent route segment and need to create their own module. this is can help to import depedencies that only used in module. for example: /product, /product/:id will be in the same module. I havent implement this because we just have 1 route.
+2. in the filter bar, selection should be clearable. I would be happy to work on these
+
+I added UI library named nebular, please refer to https://akveo.github.io/nebular/ 
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
 
 ## Development server
