@@ -9,7 +9,7 @@ import { HomePage } from './pages/home/home.page'
 import { HttpClientModule } from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NbEvaIconsModule } from '@nebular/eva-icons'
-import { NbButtonModule, NbIconModule, NbLayoutModule, NbSelectModule, NbThemeModule } from '@nebular/theme'
+import { NbButtonModule, NbCardModule, NbIconModule, NbLayoutModule, NbSelectModule, NbThemeModule } from '@nebular/theme'
 
 import { CardListComponent } from './components/CardList/card-list.component'
 import { FilterBarComponent } from './components/FilterBar/filter-bar.component'
@@ -40,7 +40,8 @@ import { FilterBarComponent } from './components/FilterBar/filter-bar.component'
     //components module
     NbSelectModule,
     NbButtonModule,
-    NbIconModule
+    NbIconModule,
+    NbCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core'
+import { Component, EventEmitter, Output } from '@angular/core'
 import { NameValueProvider } from 'src/app/providers/NameValueProvider'
+import { OrderDir } from 'src/app/services/http-request.util'
+import { ProductListParam } from 'src/app/services/product-req.service'
 
 @Component({ selector: 'app-filter-bar', templateUrl: './filter-bar.component.html', styleUrls: ['./filter-bar.component.less'] })
 export class FilterBarComponent {
@@ -23,11 +25,21 @@ export class FilterBarComponent {
   public selectedSortBy: string = 'stock'
   public sortAsc: boolean = false
 
+  @Output() submitFilter = new EventEmitter<Partial<ProductListParam>>()
+
+
   public onSortClick() {
     this.sortAsc = !this.sortAsc
   }
 
   public onSubmit() {
-    console.log(this.selectedSortBy, this.sortAsc)
+    const param: Partial<ProductListParam> = {
+      orderBy: this.selectedSortBy,
+      orderDir: this.sortAsc ? OrderDir.ASC : OrderDir.DESC
+    }
+    if (this.selectedBrand) param.brand = this.selectedBrand
+    if (this.selectedCategory) param.category = this.selectedCategory
+
+    this.submitFilter.emit(param)
   }
 }

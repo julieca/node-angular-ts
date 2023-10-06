@@ -29,14 +29,14 @@ export type ProductListParam = {
 @Injectable({ providedIn: 'root' })
 export class ProductHTTPService {
 
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   get({ offset = 0, limit = 5, orderBy = 'stock', orderDir = 'desc', ...filter }: ProductListParam) {
 
     const query = { offset: offset.toString(), limit: limit.toString(), orderBy, orderDir, ...filter }
     const params: URLSearchParams = new URLSearchParams(query)
     const queryStr = params.toString()
-    const req = this.http.get<List<Product>>(`${environment.API_URL}/${API_SEGMENT}${queryStr}`)
+    const req = this.http.get<List<Product>>(`${environment.API_URL}/${API_SEGMENT}?${queryStr}`)
     return req
 
   }

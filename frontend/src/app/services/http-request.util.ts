@@ -4,3 +4,8 @@ export type List<T> = {
   offset: number
   records: T[]
 }
+
+export enum OrderDir {
+  ASC = 'asc',
+  DESC = 'desc'
+}

@@ -1,9 +1,15 @@
 <div class="container">
-  <!-- <nb-card [accent]="seoResult?.color" class="mt-1">
-    <nb-card-header>
-      <div class="header-title">SEO Info</div>
-    </nb-card-header>
-    <nb-card-body>
-    </nb-card-body>
-  </nb-card> -->
+  <div id="list">
+    <nb-card *ngFor="let product of data.records" accent="primary" [id]="'card-' + product.gtin">
+      <nb-card-header>
+        <img [src]="imageSrc(product.image, product.category)" width="50" />
+      </nb-card-header>
+      <nb-card-body>
+        <h5 class="title">{{product.name}}</h5>
+        <div class="brand">by {{product.brandName}}</div>
+        <div class="price">${{product.price}}</div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <button *ngIf="data.limit===data.total" nbButton outline status="primary" (click)="onLoadMore()">load more</button>
 </div>
