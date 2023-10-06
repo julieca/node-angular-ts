@@ -1,17 +1,27 @@
-I installed Ts.ED which is a Node.js Framework on top of Express. Written in Typescript, it helps developer build application easily and quickly, please refer to https://tsed.io/
+I installed Ts.ED, which is a Node.js Framework built on top of Express and written in TypeScript. It helps developers build applications easily and quickly. Please refer to [https://tsed.io/](https://tsed.io/) for more information.
 
-the main.ts file need to use "Server" from Ts.ED library, integrate with 
-- ajv
-- mongoose
-- swagger
-- other express built-in
+The `main.ts` file needs to utilize the "Server" class from the Ts.ED library and integrate with the following components:
+- `ajv`
+- `mongoose`
+- `swagger`
+- Other built-in Express functionalities
 
-in the API, I simuate to add eslint, docker file.
-the code is split into some folder:
-1. config = collection all file related to config. it can be config for Ts.ED or others, include env
-2. controller = collection of controller API, including API function and it params
-3. entities = standarized schema for resposes
-4. middleware
-5. model = collection of mongoose model
-6. services
-7. util = collection of util function that can be used as global purpose
+Within the API, I have also included features to:
+- Simulate adding ESLint
+- Provide a Dockerfile for containerization
+
+The code is organized into several folders:
+
+1. **config**: This folder contains all files related to configuration. It includes configurations for Ts.ED and other settings, including environment variables.
+
+2. **controller**: This folder is a collection of API controllers, including API functions and their parameters.
+
+3. **entities**: Here, you'll find standardized schemas for responses.
+
+4. **middleware**: This folder houses middleware components.
+
+5. **model**: It contains a collection of Mongoose models.
+
+6. **services**: This folder is dedicated to various services.
+
+7. **util**: This is a collection of utility functions that can be used for various global purposes.
